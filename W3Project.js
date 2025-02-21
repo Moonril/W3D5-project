@@ -15,7 +15,9 @@ REGOLE
 
 let sum
 
-sum = 10 + 10
+sum = 10 + 20
+
+console.log('somma', sum)
 
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
@@ -49,6 +51,8 @@ console.log(me)
 */
 
 me.skills = ['Html', 'CSS', 'JavaScript']
+
+console.log(me)
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
@@ -93,7 +97,7 @@ const WhoIsBigger = function (n1, n2) {
   return bigger
 }
 
-console.log(`Which number is bigger?`, WhoIsBigger(7, 3))
+console.log(`Which number is bigger?`, WhoIsBigger(7, 8))
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -150,7 +154,7 @@ const isThisAnEmail = function (string) {
     return false
   }
 }
-console.log('isThisAnEmail:', isThisAnEmail('ciaomailt.com'))
+console.log('isThisAnEmail:', isThisAnEmail('ciaomail.com'))
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
@@ -195,7 +199,7 @@ const rollTheDices = function(num) {
 
 }
 
-console.log('rollTheDices:', rollTheDices(2))
+console.log('rollTheDices:', rollTheDices(3))
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
@@ -383,7 +387,7 @@ const newestMovie = function () {
   return newestMovie
 }
 
-console.log(newestMovie())
+console.log('Newest Movie:', newestMovie())
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -494,15 +498,15 @@ console.log('Movies array without index 0 (The Lord of the Rings: The Fellowship
 
 const selectContainer = function (){
   const container = document.getElementById('container')
-  return container  //check
+  return container  
 }
-//console.log(selectContainer())
+// console.log(selectContainer())
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 const selectTdTags = function (){
-  const tdTags = document.getElementsByTagName('td') //check
+  const tdTags = document.getElementsByTagName('td') 
   return tdTags
 }
 console.log(selectTdTags())
