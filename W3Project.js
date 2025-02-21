@@ -131,23 +131,39 @@ console.log(deleteOne('Lemone', false))  //Lemon
 */
 
 const onlyLetters = function (string) {
-  for (let i = 0; i < string.length; i++){
-    if (string[i] === number) {  //non va beeeeeeeeeeeeeeeeene. forse va prima convertito in qualcos'altro per far si che riconosca un numero?
-      string.slice(i, 1) 
-    }
-  }
-  return string
+
+  const withoutNumbers = string.split(' ').filter(char => isNaN(char)).join(' ')
+  return withoutNumbers
+  
 }
 
-console.log(onlyLetters('I have 4 dogs'))
+console.log('Do you have dogs?', onlyLetters('I have 4 dogs'))
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+const isThisAnEmail = function (string) {
+  if (string.includes('@')){  //requires more checks
+    return true
+  } else {
+    return false
+  }
+}
+console.log('isThisAnEmail:', isThisAnEmail('ciaomailt.com'))
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+const whatDayIsIt = function () {
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const day = new Date()
+  let today = weekday[day.getDay()]
+  return today
+}
+
+console.log('Today is:', whatDayIsIt())
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -162,13 +178,60 @@ console.log(onlyLetters('I have 4 dogs'))
   }
 */
 
+const rollTheDices = function(num) {
+  
+  const resultObj = {
+    sum: 0,
+    values: []
+  }
+  
+  for (let i = 0; i < num; i++) {
+    let roll = dice()
+    resultObj.values.push(roll)
+    resultObj.sum += roll
+  }
+
+  return resultObj
+
+}
+
+console.log('rollTheDices:', rollTheDices(2))
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+const howManyDays = function(date) {
+  const givenDate = new Date(date)
+  const today = new Date()
+  const differenza = today - givenDate
+  return Math.floor(differenza / (1000 * 60 * 60 * 24))
+
+}
+
+console.log('How many days passed:', howManyDays('2024-02-03')) 
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+const isTodayMyBirthday = function () {
+  const today = new Date()
+  const compleanno = {
+    name: 'Vincenza',
+    birthmonth: 9,
+    birthday: 26
+  }
+  
+  
+  if (compleanno.birthmonth === today.getMonth() && compleanno.birthday === today.getDate()){
+    console.log('Congrats!!!')
+  } else {
+    console.log('Oops, Happy Unbirthday!')
+  }
+}
+
+isTodayMyBirthday()
 
 // Arrays & Oggetti
 
@@ -178,6 +241,10 @@ console.log(onlyLetters('I have 4 dogs'))
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+
+const deleteProp = function () {
+  
+}
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
