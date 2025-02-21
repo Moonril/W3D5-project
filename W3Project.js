@@ -31,7 +31,7 @@ console.log(random)
 const me = {
   name: 'Vincenza',
   surname: 'Fumarulo',
-  age: random + 1
+  age: random + 10
 }
 
 console.log(me)
@@ -102,19 +102,44 @@ console.log(`Which number is bigger?`, WhoIsBigger(7, 3))
 */
 
 const splitMe = function (string){
-  
+  let wordsArray = string.split(' ')
+  return wordsArray
 }
+
+console.log(splitMe('Ciao come mai puzzi così tanto?'))
 
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
 
+const deleteOne = function (string, boo) {
+  if (boo === true) {
+    return string.slice(1)
+  } else {
+    return string.slice(0, (string.length -1))
+  }
+}
+
+console.log(deleteOne('Limone', true))  //imone
+console.log(deleteOne('Lemone', false))  //Lemon
+
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+
+const onlyLetters = function (string) {
+  for (let i = 0; i < string.length; i++){
+    if (string[i] === number) {  //non va beeeeeeeeeeeeeeeeene. forse va prima convertito in qualcos'altro per far si che riconosca un numero?
+      string.slice(i, 1) 
+    }
+  }
+  return string
+}
+
+console.log(onlyLetters('I have 4 dogs'))
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
